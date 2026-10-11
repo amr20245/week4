@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>School of IT Faculty Directory</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+    <style>
+      body { background: #fff; }
+      .directory { max-width: 1000px; margin: 38px auto; }
+      h1 { font-weight: 500; margin-bottom: 24px; }
+      thead th { background-color: #dc3545 !important; color: white !important; }
+    </style>
+</head>
+<body>
+<main class="container directory">
+    <h1>School of IT Faculty Directory</h1>
+    <hr class="mb-4">
+    <div class="table-responsive">
+        <table class="table table-bordered table-hover align-middle">
+            <thead>
+            <tr>
+                <th scope="col">First Name</th>
+                <th scope="col">Last Name</th>
+                <th scope="col">Title</th>
+                <th scope="col">Email</th>
+            </tr>
+            </thead>
+            <tbody>
+            <tr th:each="faculty : ${faculties}">
+                <td th:text="${faculty.firstName}">Kelly</td>
+                <td th:text="${faculty.lastName}">Miller</td>
+                <td th:text="${faculty.title}">Assistant Professor</td>
+                <td th:text="${faculty.email}">Kelly@uc.edu</td>
+            </tr>
+            </tbody>
+        </table>
+    </div>
+</main>
+</body>
+</html>
